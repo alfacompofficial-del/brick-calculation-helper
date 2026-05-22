@@ -1,14 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MasonryCalculator } from "@/components/MasonryCalculator";
+import { Toaster } from "@/components/ui/sonner";
+import { SiteHeader } from "@/components/sections/SiteHeader";
+import { SiteFooter } from "@/components/sections/SiteFooter";
+import { Hero } from "@/components/sections/Hero";
+import { CalculatorsSection } from "@/components/sections/CalculatorsSection";
+import { LearnSection } from "@/components/sections/LearnSection";
+import { GadgetSection } from "@/components/sections/GadgetSection";
+import { ShopSection } from "@/components/sections/ShopSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Калькулятор кирпича, газобетона и шлакоблока" },
+      { title: "СтройКалькулятор — расчёт материалов, обучение, магазин" },
       {
         name: "description",
         content:
-          "Онлайн-калькулятор кладки стен: рассчитайте количество кирпича, газобетона или шлакоблока, объём раствора, цемента и песка с учётом проёмов.",
+          "Калькуляторы кладки, стяжки, штукатурки, краски и обоев. Формулы, концепт умного измерителя и магазин стройматериалов.",
+      },
+      { property: "og:title", content: "СтройКалькулятор — расчёт материалов" },
+      {
+        property: "og:description",
+        content:
+          "Считайте кирпич, газобетон, цемент, краску и обои онлайн. Гайды и магазин стройматериалов.",
       },
     ],
   }),
@@ -18,18 +31,14 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background">
-      <div className="mx-auto max-w-5xl px-4 py-10">
-        <header className="mb-8 space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Калькулятор кладки стен
-          </h1>
-          <p className="text-muted-foreground">
-            Введите размеры стены, выберите материал и толщину — получите расчёт
-            материала, раствора, цемента и песка.
-          </p>
-        </header>
-        <MasonryCalculator />
-      </div>
+      <SiteHeader />
+      <Hero />
+      <CalculatorsSection />
+      <LearnSection />
+      <GadgetSection />
+      <ShopSection />
+      <SiteFooter />
+      <Toaster />
     </main>
   );
 }

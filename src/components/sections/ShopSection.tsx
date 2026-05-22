@@ -1,9 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Brick, Boxes, Wrench, PaintRoller, Layers, Hammer, MapPin, Phone, Clock } from "lucide-react";
+import { Box, Boxes, Wrench, PaintRoller, Layers, Hammer, MapPin, Phone, Clock } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const categories = [
-  { icon: Brick, title: "Кирпич и блоки", text: "Керамика, газобетон, шлакоблок." },
+  { icon: Box, title: "Кирпич и блоки", text: "Керамика, газобетон, шлакоблок." },
   { icon: Boxes, title: "Цемент и смеси", text: "М400, М500, штукатурки, наливные полы." },
   { icon: Layers, title: "Изоляция", text: "Минвата, пенопласт, гидроизоляция." },
   { icon: PaintRoller, title: "Отделка", text: "Краски, обои, плитка." },

@@ -1,26 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MasonryCalculator } from "@/components/MasonryCalculator";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Калькулятор кирпича, газобетона и шлакоблока" },
+      {
+        name: "description",
+        content:
+          "Онлайн-калькулятор кладки стен: рассчитайте количество кирпича, газобетона или шлакоблока, объём раствора, цемента и песка с учётом проёмов.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background">
+      <div className="mx-auto max-w-5xl px-4 py-10">
+        <header className="mb-8 space-y-2">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Калькулятор кладки стен
+          </h1>
+          <p className="text-muted-foreground">
+            Введите размеры стены, выберите материал и толщину — получите расчёт
+            материала, раствора, цемента и песка.
+          </p>
+        </header>
+        <MasonryCalculator />
+      </div>
+    </main>
+  );
 }
